@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./design/taske5.css" />
+    <link rel="stylesheet" href="./design/task.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav id="navbar">
+    <div class="navbar__container">
+      <div class="left__nav">
+        <div class="logo">
+          <img src="images/brandwhite.png" alt="Logo" />
+        </div>
+        <div class="nav__content">
+          <ul class="nav__links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./task4&5.html">My Project</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="right__nav">
+        <button class="join__button">Join</button>
+      </div>
+    </div>
+    </div>
+  </nav>
+
+    <section id="project__form" class="form_section">
+      <form class="container__form">
+        <div class="form_group">
+          <label for="projectname">Project Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="date_wrapper">
+          <div class="form_group">
+            <label for="start_date">Start Date</label>
+            <input type="date" id="start_date" name="start_date" required />
+          </div>
+          <div class="form_group">
+            <label for="end_date">End Date</label>
+            <input type="date" id="end_date" name="end_date" required />
+          </div>
+        </div>
+        <div class="form_group">
+          <label for="description">Description</label>
+          <textarea id="description" name="description" rows="5" required></textarea>
+        </div>
+        <div class="form_group">
+          <label>Technologies</label>
+          <div class="checkbox_1" style="display: flex">
+            <div class="checkbox_group">
+              <input type="checkbox" id="nodejs" name="technologies" value="nodejs" />
+              <label for="nodejs">Node.js</label>
+            </div>
+            <div class="checkbox_group">
+              <input type="checkbox" id="nextjs" name="technologies" value="nextjs" />
+              <label for="nextjs">Next.js</label>
+            </div>
+          </div>
+          <div class="checkbox_2" style="display: flex">
+            <div class="checkbox_group">
+              <input type="checkbox" id="typescript" name="technologies" value="typescript" />
+              <label for="typescript">TypeScript</label>
+            </div>
+            <div class="checkbox_group">
+              <input type="checkbox" id="reactjs" name="technologies" value="reactjs" />
+              <label for="reactjs">React.js</label>
+            </div>
+          </div>
+        </div>
+        <div class="form_group">
+          <label for="image_upload">Upload Image</label>
+          <input type="file" id="image_upload" name="image_upload" accept="image/*" required />
+        </div>
+        <div class="form_group">
+          <button type="submit" class="submit_btn">Submit</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="card__project">
+      <div class="txt">
+        <h2>My project</h2>
+      </div>
+      <div class="card__project__container"></div>
+    </section>
+  </body>
+  <script src="./jsday1/task5.js"></script>
+</html>
