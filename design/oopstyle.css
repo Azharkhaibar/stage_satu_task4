@@ -1,0 +1,141 @@
+#cardoop {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 7%;
+    padding-top: 5px;
+    padding-top: 3%;
+}
+
+.card__testi__item img {
+    width: 400px; 
+    height: auto; 
+    border-radius: 20px;
+    max-width: 100%;
+}
+
+.testimonial {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center; 
+}
+
+.testimonial__container {
+    display: flex;
+    margin: auto;
+    gap: 20px;
+    padding-top: 5%;
+    flex-wrap: wrap;
+}
+
+.card__testi {
+    max-width: 400px; 
+    height: auto;
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+    position: relative;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+}
+
+.card__testi__item {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.penjelasan {
+    padding: 15px;
+}
+
+.penjelasan p {
+    padding-top: 3%;
+    margin: 0;
+}
+
+#flex__profile {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    gap: 60px;
+    bottom: 5%;
+}
+
+#flex__profile h2 {
+    margin: 0;
+}
+
+#flex__profile h4 {
+    opacity: 50%;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* RATING FOR STARS */
+.btn_stack {
+    display: flex;
+    margin: auto;
+    padding-top: 5%;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.btn_stack button {
+    padding: 20px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border: none; 
+}
+
+.btn_stack i {
+    color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .card__testi {
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 992px) {
+    .card__testi {
+        max-width: 100%;
+        margin: 10px 0; 
+    }
+}
+
+@media (max-width: 768px) {
+    #cardoop {
+        padding: 5%;
+    }
+
+    .card__testi {
+        max-width: 100%;
+    }
+
+    #flex__profile {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        bottom: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .btn_stack {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn_stack button {
+        width: 100%;
+        padding: 15px;
+    }
+}

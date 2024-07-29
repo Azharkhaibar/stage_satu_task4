@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./design/task.css" />
+    <link rel="stylesheet" href="./design/oopstyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+     <nav id="navbar">
+        <div class="navbar__container">
+            <div class="left__nav">
+                <div class="logo">
+                    <img src="images/brandwhite.png" alt="Logo" />
+                </div>
+                <div class="nav__content" id="navbar-menu">
+                    <ul class="nav__links">
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./task4&5.html">My Project</a></li>
+                        <li><a href="./oop.html">Testimonial</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right__nav">
+                <button class="join__button">Join</button>
+                <button id="navbar-toggle" class="navbar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+     <div class="btn_stack">
+        <button onclick="alltestimonial()" class="rating-btn">All</button>
+        <button onclick="FilterTestimonial(1)"><i class="fas fa-star">1</i></button>
+        <button onclick="FilterTestimonial(2)"><i class="fas fa-star">2</i></button>
+        <button onclick="FilterTestimonial(3)"><i class="fas fa-star">3</i></button>
+        <button onclick="FilterTestimonial(4)"><i class="fas fa-star">4</i></button>
+        <button onclick="FilterTestimonial(5)"><i class="fas fa-star">5</i></button>
+    </div>
+
+    <!-- LATIHAN CARD DENAGN OOP -->
+
+
+    <div class="testimonial" id="cardoop">
+    
+    </div>
+
+
+
+    <!-- <div class="testimonial">
+        <div class="testimonial__container">
+            <div class="card__testi">
+                <div class="card__testi__item">
+                    <img src="images/boy-1252771_640.jpg" alt="Testimonial Image" />
+                    <div class="penjelasan">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut finibus arcu porta urna dictum
+                            dapibus. Pellentesque tellus orci, ullamcorper at ex quis, sodales elementum metus. Aenean
+                            at blandit eros.</p>
+                        <h2>Azhar Khaibar</h2>
+                        <h4>Fullstack developer</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div id="flex__profile">
+        <h2>Azhar Khaibar</h2>
+        <h4>Fullstack developer</h4>
+    </div> -->
+
+</body>
+<script src="./jsday1/OOP/class.js"></script>
+<script src="./jsday1/OOP/inheritance.js"></script>
+<script src="./jsday1/OOP/polymophism.js"></script>
+<script src="./jsday1/OOP/object.js"></script>
+<script src="./jsday1/OOP/taskoop.js"></script>
+<script src="./jsday1//hofcallback/hof.js"></script>
+<script src="./jsday1/hofcallback/callback.js"></script>
+<script src="./jsday1/OOP/taskoopbaru.js"></script>
+</html>

@@ -83,6 +83,52 @@ body {
   background-color: #dd5500;
 }
 
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+  #navbar {
+    z-index: 999;
+  }
+  
+  .nav__content {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: rgb(255, 81, 37);
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .nav__content.active {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .nav__links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav__links li {
+    margin-right: 0;
+  }
+}
+
+
+
 /* PROFILE ADVANCED */
 
 #f__profile {
