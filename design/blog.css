@@ -1,0 +1,162 @@
+.blog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.blog__container {
+  width: 90%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.blog__container h3 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+  outline: none;
+}
+
+.form-group textarea {
+  resize: vertical;
+  height: 150px;
+}
+
+.form-group input[type="file"] {
+  padding: 3px;
+}
+
+.form-group button {
+  padding: 12px 16px;
+  background-color: #e0921d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.form-group button:hover {
+  background-color: #7a4c0f;
+  transform: translateY(-2px);
+}
+
+.form-group button:active {
+  transform: translateY(0);
+}
+
+/* blog card */
+
+.blog__card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 150vh;
+  background-color: #f9f9f9;
+}
+
+.blog__card__container {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.cardblog {
+  width: 100%;
+  max-height: 400px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.carditemblog {
+  display: flex;
+}
+
+.carditemblog img {
+  height: 100%;
+  max-width: 700px;
+  border-radius: 8px 0 0 8px;
+}
+
+.text__desc {
+  padding: 20px;
+}
+
+.text__desc h2 {
+  margin: 0;
+  font-size:40px;
+  color: #333;
+}
+
+.text__desc p {
+  margin: 10px 0 0;
+  padding-top: 5%;
+  color: #555;
+  font-size: 16px;
+}
+
+.text__desc .btn {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  bottom: 10%;
+}
+
+.text__desc .btn button {
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.text__desc .btn button:hover {
+  background-color: #0056b3;
+}

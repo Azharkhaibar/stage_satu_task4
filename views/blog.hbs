@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/design/task.css">
+    <link rel="stylesheet" href="/design/blog.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="navbar__container">
+            <div class="left__nav">
+                <div class="logo">
+                    <img src="images/brandwhite.png" alt="Logo" />
+                </div>
+                <div class="nav__content" id="navbar-menu">
+                    <ul class="nav__links">
+                        <li><a href="index">Home</a></li>
+                        <li><a href="task4&5">My Project</a></li>
+                        <li><a href="oop">Testimonial</a></li>
+                        <li><a href="blog">Testimonial</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right__nav">
+                <button class="join__button">Join</button>
+                <button id="navbar-toggle" class="navbar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="blog">
+        <div class="blog__container">
+            <h3>BLOG</h3>
+            <div class="blog__wrapper">
+                <form id="contactform" action="/submit-blog" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="content">Content</label>
+                        <textarea id="content" name="content" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Upload Image</label>
+                        <input type="file" id="image" name="image" accept="image/*" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="blog__card">
+        <div class="blog__card__container">
+    </div>
+
+</body>
+<script src="../jsday1/blog.js"></script>
+
+</html>
