@@ -21,7 +21,7 @@
                         <li><a href="index">Home</a></li>
                         <li><a href="task4&5">My Project</a></li>
                         <li><a href="oop">Testimonial</a></li>
-                        <li><a href="blog">Testimonial</a></li>
+                        <li><a href="blog">Blog</a></li>
                     </ul>
                 </div>
             </div>
@@ -61,6 +61,16 @@
 
     <div class="blog__card">
         <div class="blog__card__container">
+            {{#each blogPosts}}
+            <div class="blog__card__item">
+                <h4>{{this.title}}</h4>
+                <p>{{this.content}}</p>
+                {{#if this.image}}
+                <img src="/images/{{this.image}}" alt="Blog Image">
+                {{/if}}
+            </div>
+            {{/each}}
+        </div>
     </div>
 
 </body>
