@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const cardContainer = document.querySelector(".blog__card__container");
 
   let dataBlog = [];
-
+  let editIndex = null; 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -11,22 +11,30 @@ document.addEventListener("DOMContentLoaded", function () {
     const content = document.getElementById("content").value;
     const imageUpload = document.getElementById("image").files[0];
 
-    if (!title || !content || !imageUpload) {
+    if (!title || !content || (editIndex === null && !imageUpload)) {
       alert("Please fill in all fields");
       return;
     }
 
-    let blog = {
-      title,
-      content,
-      imageUpload,
-    };
+    if (editIndex !== null) {
+      dataBlog[editIndex] = {
+        title,
+        content,
+        imageUpload: imageUpload || dataBlog[editIndex].imageUpload, // Keep old image if not replaced
+      };
+      editIndex = null; 
+    } else {
+      let blog = {
+        title,
+        content,
+        imageUpload,
+      };
+      dataBlog.push(blog);
+    }
 
-    dataBlog.push(blog);
     console.log(dataBlog);
 
     displayBlogs();
-
     form.reset();
   });
 
@@ -51,6 +59,16 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
         </div>
       `;
+
+      newCard.querySelector(".edit-btn").addEventListener("click", function () {
+        const index = this.getAttribute("data-index");
+        const blogItem = dataBlog[index];
+
+        document.getElementById("title").value = blogItem.title;
+        document.getElementById("content").value = blogItem.content;
+        document.getElementById("image").value = "";
+        editIndex = index;
+      });
 
       newCard.querySelector(".delete-btn").addEventListener("click", function () {
         const index = this.getAttribute("data-index");

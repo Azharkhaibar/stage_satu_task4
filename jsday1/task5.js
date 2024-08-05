@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const Form = document.querySelector(".container__form");
+  const form = document.querySelector(".container__form");
   const cardContainer = document.querySelector(".card__project__container");
 
   let dataBlog = [];
+  let editIndex = null;
 
-  Form.addEventListener("submit", function (event) {
+  form.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const projectName = document.getElementById("name").value;
@@ -14,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const imageUpload = document.getElementById("image_upload").files[0];
 
     if (!projectName || !startDate || !endDate || !description || !imageUpload) {
-      alert("jangan biarkan ada yg kosong");
+      alert("Please fill out all fields");
       return;
     }
 
@@ -29,19 +30,22 @@ document.addEventListener("DOMContentLoaded", function () {
       technologies,
     };
 
-    dataBlog.push(blog);
-    console.log(dataBlog);
+    if (editIndex !== null) {
+      dataBlog[editIndex] = blog;
+      editIndex = null;
+    } else {
+      dataBlog.push(blog);
+    }
 
-    Project();
-
-    Form.reset();
+    renderProjects();
+    form.reset();
   });
 
-  function Project() {
+  function renderProjects() {
     cardContainer.innerHTML = "";
 
-    dataBlog.forEach((blogItem, indexIconEdit) => {
-      const ImageNew = URL.createObjectURL(blogItem.imageUpload);
+    dataBlog.forEach((blogItem, index) => {
+      const imageUrl = URL.createObjectURL(blogItem.imageUpload);
       const newCardProject = document.createElement("div");
       newCardProject.className = "card__project__item";
 
@@ -51,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
             case "nodejs":
               return '<i class="fab fa-node-js"></i>';
             case "nextjs":
-              return '<i class="fab fa-js"></i>'; 
+              return '<i class="fab fa-js"></i>';
             case "typescript":
               return '<i class="fas fa-code"></i>';
             case "reactjs":
@@ -63,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .join("");
 
       newCardProject.innerHTML = `
-        <img src="${ImageNew}" alt="Project Image" />
+        <img src="${imageUrl}" alt="Project Image" />
         <div class="down__item">
           <h3>${blogItem.projectName}</h3>
           <div class="start__end" style="display: flex;">
@@ -76,16 +80,29 @@ document.addEventListener("DOMContentLoaded", function () {
             ${technologyIcons}
           </div>
           <div class="btn">
-            <button class="edit-btn" data-index="${indexIconEdit}">Edit</button>
-            <button class="delete-btn" data-index="${indexIconEdit}">Delete</button>
+            <button class="edit-btn" data-index="${index}">Edit</button>
+            <button class="delete-btn" data-index="${index}">Delete</button>
           </div>
         </div>
       `;
 
       newCardProject.querySelector(".delete-btn").addEventListener("click", function () {
-        const indexIconEdit = this.getAttribute("data-index");
-        dataBlog.splice(indexIconEdit, 1);
-        Project();
+        const index = this.getAttribute("data-index");
+        dataBlog.splice(index, 1);
+        renderProjects();
+      });
+
+      newCardProject.querySelector(".edit-btn").addEventListener("click", function () {
+        const index = this.getAttribute("data-index");
+        const blogItem = dataBlog[index];
+        document.getElementById("name").value = blogItem.projectName;
+        document.getElementById("start_date").value = blogItem.startDate;
+        document.getElementById("end_date").value = blogItem.endDate;
+        document.getElementById("description").value = blogItem.description;
+        Array.from(document.querySelectorAll('input[name="technologies"]')).forEach((checkbox) => {
+          checkbox.checked = blogItem.technologies.includes(checkbox.value);
+        });
+        editIndex = index;
       });
 
       cardContainer.appendChild(newCardProject);
